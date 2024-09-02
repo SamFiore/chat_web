@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} Sala (número) {% endblock %}</title>
+</head>
+<body>
+    <main>
+        {% block content %}
+        <div>
+            <a href="{% url 'home' %}">Regresar</a>
+        </div>
+        <form method='POST'>
+            {% csrf_token %}
+            <input type="text" name="barra_chat" id="barra_chat" placeholder="Escriba aquí" >
+            <button type="submit">Enviar</button>
+        </form>
+        <div>
+            {% for xid,xcontent in dict_with_logs.items %}
+            <p style="text-decoration: underline;">{{ xcontent.0 }}</p>
+            <p>{{ xcontent.1 }}</p>
+            {% endfor %}
+        </div>
+        {% endblock %}
+    </main> 
+</body> 
+</html>
