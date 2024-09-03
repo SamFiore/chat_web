@@ -27,12 +27,13 @@ user = os.getenv('USER')
 password = os.getenv('PSW')
 host = os.getenv('HOST')
 port = os.getenv('PORT')
+secret_key_django = os.getenv('SECRET_KEY_DJANGO')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$1f)7s^$%nqi(7fdnvt4_4(x(z=&%r0l0h%0=727a)+fj=2tjw'
+SECRET_KEY = secret_key_django
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
