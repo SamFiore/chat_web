@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
-from chats.views import sala_chats
+from chats.views import sala_chats,lobby_salas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +25,6 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('accounts/',include('django.contrib.auth.urls'),name='login'),
     path('', TemplateView.as_view(template_name="home.html"), name="home"),
-    path('sala_chat',sala_chats,name='salas')
+    path('lobby/rooms',lobby_salas,name='lobby'),
+    path('sala/<str:sala>/',sala_chats)
 ]
