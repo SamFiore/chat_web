@@ -5,10 +5,6 @@ from .models import Message
 import json
 # Create your views here.
 def sala_chats(req,sala):
-    if req.method == 'POST':
-        author = get_user(req)
-        msg_model = Message.objects.create(value=req.POST['message'],room=sala,author=author)
-        msg_model.save()
     return render(req,'salas/plantilla_sala.html')
 
 def lobby_salas(req):
